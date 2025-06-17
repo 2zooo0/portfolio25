@@ -1,0 +1,72 @@
+<!-- portfolio-details.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio Details</title>
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<a onclick="window.history.back()" class="btn-close-custom" title="Close"></a>
+  <main id="main">
+    <section id="portfolio-details" class="portfolio-details">
+      
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center" id="portfolio-gallery">
+                <!-- JS로 이미지가 삽입됨 -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <!-- 반드시 아래 구조로 유지 -->
+              <ul>
+                <li><strong>Project name</strong>: <span id="portfolio-title"></span></li>
+                <li><strong>Category</strong>: <span id="portfolio-category"></span></li>
+                <li><strong>Client</strong>: <span id="portfolio-client"></span></li>
+                <li><strong>Project date</strong>: <span id="portfolio-date"></span></li>
+                <li><strong>Project URL</strong>: <a id="portfolio-url" href="#" target="_blank"></a></li>
+            </div> <!-- ✅ 이거 빠져 있었음! -->
+
+            <!-- 추가 -->
+            <div class="portfolio-description">
+              <h2 id="portfolio-summary">작품 요약</h2>
+              <p id="portfolio-desc">상세 설명</p>
+            </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- 순서 중요: 데이터 > 렌더링 -->
+  <script src="assets/js/portfolio-data.js"></script>
+  <script src="assets/js/portfolio-details.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
