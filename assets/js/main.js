@@ -275,3 +275,64 @@
   new PureCounter();
 
 })()
+
+// Contact Form AJAX submission with Formspree
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  const result = document.getElementById("form-result");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = "https://formspree.io/f/mnnvvejl";
+
+    try {
+      const response = await fetch(action, {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        result.innerHTML = "<p class='text-success'>메시지가 성공적으로 전송되었습니다!</p>";
+        form.reset();
+      } else {
+        result.innerHTML = "<p class='text-danger'>오류가 발생했습니다. 다시 시도해주세요.</p>";
+      }
+    } catch (error) {
+      result.innerHTML = "<p class='text-danger'>전송 중 문제가 발생했습니다.</p>";
+    }
+  });
+});
+
+document.querySelector("#contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch("https://formspree.io/f/mnnvvejl", {
+    method: "POST",
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      showToast(); // 성공 알림
+      form.reset(); // 폼 초기화
+    }
+  }).catch(error => {
+    alert("오류가 발생했습니다. 다시 시도해주세요.");
+  });
+});
+
+function showToast() {
+  const toast = document.getElementById("toast-message");
+  toast.style.display = "block";
+  setTimeout(() => {
+    toast.style.display = "none";
+  }, 3000);
+}

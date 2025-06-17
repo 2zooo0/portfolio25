@@ -1250,8 +1250,8 @@ section {
   padding: 10px 30px;
   border-radius: 30px;
   border: 2px solid #0678e3; /* 파란 테두리 */
-  background-color: white;
-  color: #0678e3;
+  background-color: #0678e3;
+  color: #ffffff;
   font-weight: 600;
   font-size: 16px;
   transition: all 0.3s ease;
@@ -1259,6 +1259,34 @@ section {
 }
 
 .custom-send-button:hover {
+  background-color: #2789e4;
+  color: white;
+}
+
+.sent-message {
+  color: #0678e3 !important;
+  font-weight: 500;
+}
+
+.toast-message {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #0678e3;
   color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 9999;
+  font-size: 16px;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
 }

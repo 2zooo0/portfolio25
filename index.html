@@ -556,25 +556,35 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="https://formspree.io/f/mnnvvejl" method="POST">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" placeholder="이름" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" name="email" class="form-control" placeholder="이메일" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" name="subject" class="form-control" placeholder="제목" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="내용" required></textarea>
-              </div>
-              <div class="text-center mt-3">
-                <button type="submit" class="custom-send-button">Send Message</button>
-              </div>
-            </form>
+           <form id="contact-form" class="php-email-form">
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <input type="text" name="name" class="form-control" placeholder="이름" required>
+    </div>
+    <div class="col-md-6 form-group mt-3 mt-md-0">
+      <input type="email" name="email" class="form-control" placeholder="이메일" required>
+    </div>
+  </div>
+
+  <div class="form-group mt-3">
+    <input type="text" name="subject" class="form-control" placeholder="소속" required>
+  </div>
+
+  <div class="form-group mt-3">
+    <textarea name="message" class="form-control" rows="5" placeholder="메시지" required></textarea>
+  </div>
+
+  <!-- ✅ 메시지를 버튼 위로 이동
+  <div class="my-3 text-center">
+    <div class="sent-message" style="display: none;">메시지가 성공적으로 전송되었습니다!</div>
+  </div> -->
+
+  <div class="text-center mt-2">
+    <button type="submit" class="form-submit-btn">메시지 보내기</button>
+  </div>
+</form>
+
+
 
 
           </div>
@@ -625,6 +635,7 @@
   <script src="assets/js/portfolio-data.js"></script>
   <script src="assets/js/portfolio-render-index.js"></script>
 
+  <div id="toast-message" class="toast-message">메시지가 성공적으로 전송되었습니다!</div>
 
 </body>
 
