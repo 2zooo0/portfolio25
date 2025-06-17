@@ -1245,3 +1245,20 @@ section {
 .btn-close-custom:hover {
   background-color: rgba(255, 255, 255, 1);
 }
+
+.custom-send-button {
+  padding: 10px 30px;
+  border-radius: 30px;
+  border: 2px solid #0678e3; /* 파란 테두리 */
+  background-color: white;
+  color: #0678e3;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-send-button:hover {
+  background-color: #0678e3;
+  color: white;
+}
